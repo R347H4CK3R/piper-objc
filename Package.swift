@@ -35,8 +35,7 @@ let package = Package(
             ],
             path: "Sources/piper-objc",
             cxxSettings: [
-                .headerSearchPath("utils"),
-                .unsafeFlags(["-fmodules", "-fcxx-modules"])
+                .headerSearchPath("utils")
             ]
         ),
         .target(name: "piper-utils"),
