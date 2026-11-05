@@ -140,7 +140,6 @@ public class Piper: NSObject {
         opts.espeak_data_path = nil
         opts.g2pw_model_dir = nil
         opts.data_dir = nil
-        opts.openjtalk_dict_dir = nil
 
         func withOptionalCString<T>(_ str: String?, _ body: (UnsafePointer<CChar>?) -> T) -> T {
             guard let s = str, !s.isEmpty else { return body(nil) }
@@ -159,7 +158,6 @@ public class Piper: NSObject {
                                 mutableOpts.espeak_data_path = espeakC
                                 mutableOpts.data_dir = dataDirC
                                 mutableOpts.g2pw_model_dir = g2pwC
-                                mutableOpts.openjtalk_dict_dir = openjtalkC
                                 return piper_create_with_options(&mutableOpts)
                             }
                         }
